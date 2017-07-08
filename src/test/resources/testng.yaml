@@ -1,0 +1,6 @@
+name: SingleSuite
+
+tests:
+  - name: Regression1
+    classes:
+     - com.qyf404.learning.akka.order.SellerActorTest
