@@ -5,12 +5,35 @@
     <groupId>com.qyf404</groupId>
     <artifactId>learning-akka</artifactId>
     <packaging>jar</packaging>
+    <version>1.0</version>
 
     <dependencies>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-actor_2.11</artifactId>
             <version>2.5.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.20</version>
+        </dependency>
+        <dependency>
+            <groupId>io.ebean</groupId>
+            <artifactId>ebean</artifactId>
+            <version>10.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.3-1102-jdbc4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.avaje.composite</groupId>
+            <artifactId>composite-testing</artifactId>
+            <version>3.1</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
@@ -28,6 +51,18 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.repaint.maven</groupId>
+                <artifactId>tiles-maven-plugin</artifactId>
+                <version>2.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <tiles>
+                        <tile>org.avaje.tile:java-compile:1.1</tile>
+                        <tile>io.ebean.tile:enhancement:2.1</tile>
+                    </tiles>
                 </configuration>
             </plugin>
         </plugins>
