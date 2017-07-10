@@ -3,11 +3,12 @@ package com.qyf404.learning.akka.order;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.testkit.javadsl.TestKit;
+import com.qyf404.learning.akka.Application;
 import io.ebean.Ebean;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 
 import java.sql.SQLException;
 
@@ -15,7 +16,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class SellerActorTest {
-
     static ActorSystem system;
 
     @BeforeClass
@@ -27,6 +27,11 @@ public class SellerActorTest {
     public static void teardown() throws SQLException {
         TestKit.shutdownActorSystem(system);
         system = null;
+    }
+
+    @BeforeMethod
+    public void before(){
+        new Application();
     }
 
     @Test
