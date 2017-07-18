@@ -6,10 +6,7 @@ import akka.testkit.javadsl.TestKit;
 import com.qyf404.learning.akka.Application;
 import com.qyf404.learning.akka.common.HibernateUtil;
 import org.h2.tools.Server;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import javax.persistence.EntityManager;
 import java.sql.SQLException;
@@ -19,25 +16,28 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class SellerActorTest {
-    static ActorSystem system;
+    private ActorSystem system;
     static Server server;
 
     @BeforeClass
     public static void setup() throws SQLException {
         server = Server.createTcpServer(new String[]{"-tcpPort", "9080"}).start();
-        system = ActorSystem.create();
     }
 
     @AfterClass
     public static void teardown() throws SQLException {
-        TestKit.shutdownActorSystem(system);
-        system = null;
         server.stop();
     }
 
     @BeforeMethod
     public void before() {
-        new Application();
+        system = ActorSystem.create();
+    }
+
+    @AfterMethod
+    public void after() {
+        TestKit.shutdownActorSystem(system);
+        system = null;
     }
 
     @Test
