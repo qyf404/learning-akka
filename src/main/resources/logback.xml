@@ -22,29 +22,17 @@
         </encoder>
     </appender>
 
-    <root level="INFO">
+    <!-- Hibernate logger-->
+    <!--<logger name="org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator" level="DEBUG"/>-->
+    <logger name="org.hibernate.SQL" level="DEBUG"/>
+    <!--<logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>-->
+    <logger name="org.hibernate.internal.SessionImpl" level="TRACE"/>
+    <logger name="org.hibernate.engine.transaction.internal.TransactionImpl" level="DEBUG"/>
+
+    <logger name="com.qyf404" level="INFO"/>
+
+    <root level="WARN">
         <appender-ref ref="APPLICATION"/>
         <appender-ref ref="STDOUT"/>
     </root>
-
-
-    <!--<logger name="io.ebean" level="INFO"/>-->
-
-    <!-- sql and transaction logging
-    <logger name="io.ebean.SQL" level="TRACE"/>
-    <logger name="io.ebean.TXN" level="TRACE"/>
-    <logger name="io.ebean.SUM" level="TRACE"/>
-    <logger name="io.ebean.DDL" level="TRACE"/>
-    -->
-
-    <!-- l2 cache logging
-    <logger name="io.ebean.cache.QUERY" level="TRACE"/>
-    <logger name="io.ebean.cache.BEAN" level="TRACE"/>
-    <logger name="io.ebean.cache.COLL" level="TRACE"/>
-    <logger name="io.ebean.cache.NATKEY" level="TRACE"/>
-    -->
-
-    <!-- elasticSearch query logging -->
-    <!--<logger name="org.avaje.ebean.ELA" level="TRACE"/>-->
-
 </configuration>

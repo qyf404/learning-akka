@@ -12,7 +12,8 @@ lazy val hibernateVersion = "5.2.10.Final"
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % akkaVersion,
   "com.typesafe.akka" %% "akka-testkit" % akkaVersion,
-  "org.slf4j" % "slf4j-api" % "1.7.20",
+  "org.slf4j" % "slf4j-api" % "1.7.25",
+  "ch.qos.logback" % "logback-classic" % "1.2.3",
   "org.hibernate" % "hibernate-core" % hibernateVersion,
   "org.hibernate" % "hibernate-c3p0" % hibernateVersion,
   "javassist" % "javassist" % "3.12.1.GA",
@@ -20,8 +21,7 @@ libraryDependencies ++= Seq(
   "org.testng" % "testng" % "6.10" % Test,
   "org.assertj" % "assertj-core" % "3.3.0" % Test,
   "com.h2database" % "h2" % "1.4.196" % Test,
-  "org.mockito" % "mockito-core" % "1.10.19" % Test,
-  "ch.qos.logback" % "logback-classic" % "[1,2)" % Test
+  "org.mockito" % "mockito-core" % "1.10.19" % Test
 )
 
 testNGSettings
