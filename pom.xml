@@ -5,7 +5,7 @@
     <groupId>com.qyf404</groupId>
     <artifactId>learning-akka</artifactId>
     <packaging>jar</packaging>
-    <version>1.1</version>
+    <version>1.2.snapshot</version>
 
     <properties>
         <akka.version>2.5.3</akka.version>
@@ -16,6 +16,11 @@
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-actor_2.11</artifactId>
+            <version>${akka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-slf4j_2.11</artifactId>
             <version>${akka.version}</version>
         </dependency>
         <dependency>
