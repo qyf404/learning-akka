@@ -67,6 +67,8 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 
 ### 讲解代码
 
+> 以下源码在v1.1中.
+
 在Application的main方法里给展现了如何向sellerActor发送命令.
 
 ```java
@@ -101,14 +103,55 @@ public class SellerActor extends AbstractActor {
 }
 ```
 
-akka就这么简单的让我们用起来了.在akka中最常用到的对象就是actor.akka也是基于一个actor模型理
-论<sup>[1]</sup>设计的.上面给出的示例代码是将akka作为本地服务使用的,所以不需要独立配置akka
-的配置文件.当然了,你也可以在项目中加入akka的配置文件.
+akka就这么简单的让我们用起来了.在akka中最常用到的对象就是actor.akka也是基于一个actor模型
+理论[^1]设计的.前面的示例代码我们并没有特意的配置akka,akka就开始工作了,主要是
+因为在akka的jar包中有akka的默认配置`reference.conf`,默认akka作为本地服务使用的,.当然了,你也可以在项目中加
+入akka的配置文件.
+
+![](../img/1_2.png)
+
+### 修改akka的配置文件
+
+> 以下源码在v1.2中.
+
+akka默认会读取项目中`application.conf`来初始化,我们可以通过增加这个文件来实现配置akka.
+现在让我们把slf4j整合到akka中,配置如下:
+
+![](../img/1_3.png)
+
+```
+akka {
+  loggers = ["akka.event.slf4j.Slf4jLogger"]
+  logging-filter = "akka.event.slf4j.Slf4jLoggingFilter"
+  loglevel = "INFO"
+  stdout-loglevel = "DEBUG"
+  actor {
+    provider = "local"
+    default-dispatcher {
+      throughput = 1
+    }
+  }
+}
+```
+
+之后你再运行测试时就能看到这么一行日志:
+
+```
+[DEBUG] [07/19/2017 11:54:49.896] [main] [EventStream] StandardOutLogger started
+[DEBUG] [07/19/2017 11:54:50.115] [main] [EventStream(akka://default)] logger log1-Slf4jLogger started
+[DEBUG] [07/19/2017 11:54:50.116] [main] [EventStream(akka://default)] Default Loggers started
+```
 
 
-## 参考
+### 代码版本
 
-1. [actor模型理论][1]
+代码地址: git@github.com:qyf404/learning-akka.git
 
-[1]: https://en.wikipedia.org/wiki/Actor_model
+| 版本 | 说明 |
+|---|---|
+| v1.1 | akka简单示例 |
+| v1.2 | akka配置文件简单示例 |
+
+
+[^1]: [actor模型理论]( https://en.wikipedia.org/wiki/Actor_model)
 
