@@ -2,7 +2,7 @@ import de.johoop.testngplugin.TestNGPlugin._
 
 name := "learning-akka"
 
-version := "1.2.snapshot"
+version := "1.2"
 
 scalaVersion := "2.12.2"
 
