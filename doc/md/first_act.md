@@ -145,7 +145,7 @@ akka {
 
 ### 代码版本
 
-代码地址: git@github.com:qyf404/learning-akka.git
+代码地址: [https://github.com/qyf404/learning-akka/tags](https://github.com/qyf404/learning-akka/tags)
 
 | 版本 | 说明 |
 |---|---|
