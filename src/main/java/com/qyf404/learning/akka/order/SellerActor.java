@@ -19,7 +19,7 @@ public class SellerActor extends AbstractActor {
                     BookOrder bookOrder = new BookOrder();
                     bookOrder.bookName = co.bookName;
                     bookOrder.save();
-                    LOGGER.info("Seller is created order.");
+                    LOGGER.info("Seller has created order.");
                 })
                 .build();
     }
