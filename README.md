@@ -1,6 +1,10 @@
 # learning-akka
 Learn akka step by step.
 
+# 十分重要
+
+最新的文档请参阅[master分支](https://github.com/qyf404/learning-akka).
+
 # 项目依赖
 
 ## 数据库

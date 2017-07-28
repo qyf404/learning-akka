@@ -5,7 +5,7 @@
     <groupId>com.qyf404</groupId>
     <artifactId>learning-akka</artifactId>
     <packaging>jar</packaging>
-    <version>1.2</version>
+    <version>2.1</version>
 
     <properties>
         <akka.version>2.5.3</akka.version>

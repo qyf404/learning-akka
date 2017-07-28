@@ -20,6 +20,7 @@ public class SellerActor extends AbstractActor {
                     bookOrder.bookName = co.bookName;
                     bookOrder.save();
                     LOGGER.info("Seller has created order.");
+                    sender().tell(new Response("create order success."), self());
                 })
                 .build();
     }
@@ -34,5 +35,13 @@ public class SellerActor extends AbstractActor {
         }
 
         public final String bookName;
+    }
+
+    public static class Response {
+        public Response(String message) {
+            this.message = message;
+        }
+
+        public final String message;
     }
 }
