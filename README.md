@@ -1,4 +1,7 @@
 # learning-akka
+
+![](https://travis-ci.org/qyf404/learning-akka.svg?branch=master)
+
 Learn akka step by step.
 
 # 十分重要
