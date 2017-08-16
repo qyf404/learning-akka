@@ -1,6 +1,6 @@
 # learning-akka
 
-![](https://travis-ci.org/qyf404/learning-akka.svg?branch=master)
+[![Build Status](https://travis-ci.org/qyf404/learning-akka.svg?branch=master)](https://travis-ci.org/qyf404/learning-akka)
 
 Learn akka step by step.
 
