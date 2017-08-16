@@ -1,7 +1,6 @@
 # learning-akka
 
 [![Build Status](https://travis-ci.org/qyf404/learning-akka.svg?branch=master)](https://travis-ci.org/qyf404/learning-akka)
-
 [![codecov](https://codecov.io/gh/qyf404/learning-akka/branch/master/graph/badge.svg)](https://codecov.io/gh/qyf404/learning-akka)
 
 Learn akka step by step.
